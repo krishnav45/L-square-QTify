@@ -1,43 +1,73 @@
+/* General styles for the search input and button */
 .search, .searchButton {
-  box-sizing: border-box; /* Ensure padding and border are included in the height and width */
+  box-sizing: border-box; /* Include padding and border in the height and width */
   height: 100%;
   padding: 14px 20px;
 }
+
 .search {
-    height: 100%;
-    border-radius: 8px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border: 1px solid var(--color-black);
-    width: 502px;
+  width: 100%; /* Make the search input take up full width initially */
+  max-width: 502px; /* Set a maximum width */
+  height: 100%;
+  border-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid var(--color-black);
+}
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 48px;
+  width: 100%; /* Make the wrapper full width */
+  flex-wrap: nowrap; /* Prevent wrapping to the next line */
+}
+
+.searchButton {
+  border-radius: 0px 8px 8px 0px;
+  height: 100%;
+  border: 1px solid var(--color-black);
+  border-left: none;
+  cursor: pointer;
+  width: auto; /* Ensure button width is automatic */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 777px) {
+  .search {
+    max-width: 100%; /* Remove maximum width constraint */
+    width: calc(100% - 70px); /* Adjust width to leave space for the button */
+    margin-bottom: 0; /* Remove margin below search input */
   }
-  
+
+  .searchButton {
+    width: 70px; /* Set a fixed width for the button */
+  }
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
   .wrapper {
     display: flex;
-    align-items: stretch;
-    height: 48px;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
   }
-  
+
+  .search {
+    padding: 10px; /* Reduce padding for smaller screens */
+    width: calc(100% - 60px); /* Adjust width to leave space for the button */
+  }
+
   .searchButton {
-    border-radius: 0px 8px 8px 0px;
-    height: 100%;
-    border: 1px solid var(--color-black);
-    border-left: none;
-    cursor: pointer;
-    height: 100%;
+    width: 60px; /* Set a fixed width for the button */
+    padding: 10px; /* Reduce padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
-  
-  .listElement {
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
+
   .albumTitle {
-    font-size: 16px;
+    font-size: 14px; /* Smaller font size for titles on small screens */
   }
-  
+
   .albumArtists {
-    font-size: 12px;
+    font-size: 10px; /* Smaller font size for artist names */
   }
-  
+}

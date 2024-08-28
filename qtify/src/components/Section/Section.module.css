@@ -1,0 +1,65 @@
+.section {
+  padding: 20px;
+  background-color: #121212; /* Adjust to match the background from your design */
+  margin-bottom: 0px;
+  opacity: 1; /* Set to fully visible */
+  position: relative; /* Removes absolute positioning */
+  gap: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+}
+
+.collapseButton {
+  background-color: #121212; /* Match the button color to the design */
+  color: #34C94B;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid layout */
+  gap: 20px; /* Spacing between cards */
+  width: 100%; /* Ensures full width for responsiveness */
+}
+
+.gridCollapsed {
+  display: none;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 600px) {
+  .header h2 {
+    font-size: 16px; /* Smaller font size for smaller screens */
+  }
+
+  .collapseButton {
+    font-size: 16px; /* Smaller button font size */
+    padding: 6px 12px; /* Adjust button padding */
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid layout for smaller screens */
+    gap: 10px; /* Reduce gap between cards */
+  }
+}

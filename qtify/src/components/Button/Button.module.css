@@ -2,10 +2,16 @@
     background-color: var(--button-bg-color, black);
     color: var(--button-text-color, 
     #34C94B);
-    border-radius: 5px; /* Adjust as needed */
-    padding: 10px 20px; /* Adjust as needed */
+    border-radius: 12px; /* Adjust as needed */
     cursor: pointer;
-    border: none;
+    border: 1px;
     font-family: 'Poppins', sans-serif; /* Ensure Poppins font is imported in your global CSS */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.25px;
+    padding: 10px 16px 10px 16px;
+    gap: 10px;
+
   }
   

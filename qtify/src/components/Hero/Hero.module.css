@@ -1,14 +1,49 @@
 .hero {
-    background-color: 
-    #121212;
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
+  background-color: #121212;
+  height: auto; /* Remove fixed height to allow for responsive adjustments */
+  min-height: 270px; /* Set a minimum height to maintain design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  padding: 20px; /* Add padding for spacing on smaller screens */
+  flex-wrap: wrap; /* Allow content to wrap for smaller screens */
+}
+
+/* Paragraph styles */
+.hero p {
+  color: #FFFFFF;
+  margin: 0; /* Removes the default margin */
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .hero {
+    gap: 20px; /* Reduce gap between elements */
+    padding: 15px; /* Adjust padding for smaller screens */
+    flex-direction: column; /* Stack elements vertically */
   }
-  h1 {
-    color: #FFFFFF;
+
+  .hero p {
+    font-size: 28px; /* Reduce font size for smaller screens */
+    line-height: 40px; /* Adjust line height accordingly */
   }
-  
+}
+
+/* Media query for very small screens */
+@media (max-width: 480px) {
+  .hero {
+    gap: 10px; /* Further reduce gap */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .hero p {
+    font-size: 24px; /* Further reduce font size */
+    line-height: 36px; /* Adjust line height for readability */
+  }
+}
