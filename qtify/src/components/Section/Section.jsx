@@ -6,7 +6,7 @@ import Carousel from '../Carousel/Carousel'; // Adjust the import path as needed
 
 const Section = ({ title, apiEndpoint }) => {
   const [albums, setAlbums] = useState([]);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true); // Set initial state to collapsed (true)
 
   useEffect(() => {
     // Fetch albums data based on the provided API endpoint
