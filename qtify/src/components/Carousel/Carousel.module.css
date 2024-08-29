@@ -1,0 +1,43 @@
+/* Carousel.module.css */
+
+.carouselContainer {
+    position: relative;
+  }
+  
+  .swiperButtonPrev, .swiperButtonNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 50%;
+  }
+  
+  .swiperButtonPrev {
+    left: 10px;
+  }
+  
+  .swiperButtonNext {
+    right: 10px;
+  }
+  
+
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiperSlideContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  

@@ -1,11 +1,26 @@
 .navbar {
-  background: #34C94B;
+  background-color: var(--color-primary);
   height: 74px;
-  width: 100%; /* Changed from 100vw to 100% */
-  max-width: 100vw; /* Ensures it does not exceed viewport width */
-  padding: 0px 32px;
+  width: 100%; /* Ensure the navbar takes full width without causing overflow */
+  padding: 0px 16px; /* Adjusted padding */
   display: flex;
   align-items: center;
+  background-color: #34C94B;
   justify-content: space-between;
-  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack items on smaller screens */
+    height: auto; /* Allow height to adjust */
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px;
+  }
 }
