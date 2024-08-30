@@ -1,12 +1,35 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import Section from './components/Section/Section'
+import Section from './components/Section/Section';
 
 function App() {
+  const [genres, setGenres] = useState([]); // Initialize as an empty array
+
+  useEffect(() => {
+    // Fetch genres data
+    const fetchGenres = async () => {
+      try {
+        const response = await fetch('https://qtify-backend-labs.crio.do/genres');
+        const data = await response.json();
+
+        if (data && Array.isArray(data.data)) {
+          setGenres(data.data); // Correctly set genres
+        } else {
+          console.error('Genres data is not an array:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching genres:', error);
+      }
+    };
+
+    fetchGenres();
+  }, []);
+
   return (
     <div className="App">
-      <Navbar /> {/* Only display the Navbar component */}
+      <Navbar />
       <Hero />
       {/* Top Albums Section */}
       <Section 
@@ -17,6 +40,12 @@ function App() {
       <Section 
         title="New Albums" 
         apiEndpoint="https://qtify-backend-labs.crio.do/albums/new" 
+      />
+      {/* Songs Section */}
+      <Section 
+        title="Songs" 
+        apiEndpoint="https://qtify-backend-labs.crio.do/songs" 
+        genres={genres} // Pass genres to the Section component
       />
     </div>
   );

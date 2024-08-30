@@ -9,8 +9,8 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Add space between title and button */
   margin-bottom: 20px;
 }
 
@@ -24,16 +24,17 @@
 }
 
 .collapseButton {
-  background-color: #121212; /* Match the button color to the design */
+  background-color: #121212;
   color: #34C94B;
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 30px;
+  line-height: 20px;
+  margin-left: auto; /* Align button to the right */
 }
 
 .grid {
@@ -46,6 +47,30 @@
 .gridCollapsed {
   display: none;
 }
+
+.tabsContainer {
+  margin-top: 16px;
+  width: 100%; /* Ensure full width for the tabs */
+  margin-bottom: 16px; /* Add space between the tabs and the card */
+}
+
+.tabs .MuiTab-root.Mui-selected {
+  color: white !important; /* Override the default blue color */
+}
+
+.tabs .MuiTabs-indicator {
+  background-color: #34C94B; /* Underline color for the active tab */
+}
+
+.tab {
+  color: white; /* Ensure all tabs are white */
+}
+
+.tab:hover {
+  color: white; /* Remove hover effect */
+  cursor: default; /* Optional: Change cursor to default on hover */
+}
+
 
 /* Media queries for smaller screens */
 @media (max-width: 600px) {
