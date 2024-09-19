@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Section from './components/Section/Section';
+import FAQ from './components/FAQ/FAQ';
 
 function App() {
   const [genres, setGenres] = useState([]); // Initialize as an empty array
@@ -47,6 +48,7 @@ function App() {
         apiEndpoint="https://qtify-backend-labs.crio.do/songs" 
         genres={genres} // Pass genres to the Section component
       />
+      <FAQ />
     </div>
   );
 }
